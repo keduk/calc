@@ -31,7 +31,6 @@ public class Operations {
     public static BigDecimal div(BigDecimal arg1, BigDecimal arg2) {
         BigDecimal result = BigDecimal.ZERO;
 
-
         if (arg2.equals(BigDecimal.ZERO)) {
             System.out.println("Error. Division by zero.");
         } else {
@@ -42,7 +41,15 @@ public class Operations {
     }
 
     public static BigDecimal sqrt(BigDecimal arg) {
-        return BigDecimal.valueOf(Math.sqrt(arg.doubleValue()));
+        BigDecimal result = BigDecimal.ZERO;
+
+        if (arg.doubleValue() < 0) {
+            System.out.println("Error. Invalid input.");
+        } else {
+            result = BigDecimal.valueOf(Math.sqrt(arg.doubleValue()));
+        }
+
+        return result;
     }
 
     public static BigDecimal pow(BigDecimal arg1, BigDecimal arg2) {
